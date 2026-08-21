@@ -24,11 +24,36 @@ return "Loser";
 }
 
 }
+
+
+function playGame(){
+  let humanScore = 0;
+  let computerScore = 0;
+
 const humanSelection = getHumanChoice();
 const computerSelection = getComputerChoice();
-alert(computerSelection)
-alert(playRound(humanSelection, computerSelection));
+alert(computerSelection);
+const result = playRound(humanSelection, computerSelection);
+if (result === "You won") {
+  humanScore = humanScore + 1;
+  alert("Human score: " + humanScore);
+} else if (result === "Loser") {
+  computerScore = computerScore + 1;
+  alert("Computer score: " + computerScore);
+}
 
-
-
-
+const humanSelection2 = getHumanChoice();
+const computerSelection2 = getComputerChoice();
+alert(computerSelection2);
+const result2 = playRound(humanSelection2, computerSelection2);
+if (result2 === "You won") {
+  humanScore = humanScore + 1;
+  alert("Human score: " + humanScore);
+} else if (result2 === "Loser") {
+  computerScore = computerScore + 1;
+  alert("Computer score: " + computerScore);
+}
+  alert("Human score: " + humanScore + "\nComputer score: " + computerScore);
+  
+}
+playGame();
