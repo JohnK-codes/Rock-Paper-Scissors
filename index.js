@@ -30,18 +30,26 @@ function playGame() {
   for (; round < 6; round++) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
-    alert(playRound(humanSelection, computerSelection));
     const result = playRound(humanSelection, computerSelection);
     if (result === "You won") {
       humanScore++;
-    } else if (playRound(humanSelection, computerSelection) === "Loser") {
+    } else if (result === "Loser") {
       computerScore++;
-    } else if (playRound(humanSelection, computerSelection) === "Draw") {
+    } else if (result === "Draw") {
       humanScore++;
       computerScore++;
-      const result = playRound(humanSelection, computerSelection);
     }
+    alert(computerSelection);
+    alert(result);
   }
+  if (humanScore > computerScore) {
+    alert("You're winner");
+  } else if (humanScore < computerScore) {
+    alert("The winner is computer!");
+  } else if (humanScore === computerScore) {
+    alert("The winner is both");
+  }
+  alert(`"Score"\n Human: ${humanScore}\n Computer: ${computerScore}`);
 }
 
 playGame();
