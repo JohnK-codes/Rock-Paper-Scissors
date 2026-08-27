@@ -49,7 +49,7 @@ function playGame() {
   } else if (humanScore === computerScore) {
     alert("The winner is both");
   }
-  alert(`"Score"\n Human: ${humanScore}\n Computer: ${computerScore}`);
+  alert(`"Score"\nHuman: ${humanScore}\nComputer: ${computerScore}`);
 }
 
 playGame();
